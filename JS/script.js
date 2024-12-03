@@ -430,6 +430,23 @@ let playerList = document.querySelector(".players_list");
 let modal_title = document.getElementById("modal_title");
 
 let playerForm = document.getElementById("playerForm");
+
 let createPlayerPopUp = document.getElementById("createPopUp");
+
+const openListPlayers = () => {
+  document.getElementById("players_list").toggleAttribute("open", true);
+};
+
+const closeListPlayers = () => {
+  document.getElementById("players_list").toggleAttribute("open", false);
+};
+
+const onOpenCreatePlayer = () => {
+  createPlayerPopUp.toggleAttribute("open", true);
+};
+
+const onCloseCreatePlayer = () => {
+  createPlayerPopUp.toggleAttribute("open", false);
+};
 
   
