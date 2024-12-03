@@ -236,3 +236,95 @@
           class="w-7 ms-auto rotate-45 cursor-pointer"
           onclick="closeListPlayers()"/>
       </div>
+      <div
+        class="players_list flex flex-col gap-y-3 mt-10 flex-grow h-full overflow-y-scroll"></div>
+
+        <!-- Add Player form pop up -->
+        <div id="createPopUp" class="fixed inset-0 min-h-screen h-full w-full overflow-y-auto backdrop-blur-md z-50 hidden open:flex items-center justify-center p-4">
+          <div class="bg-slate-200 max-w-2xl max-h-full overflow-y-scroll shadow-lg rounded-lg px-4 py-6 lg:p-5 w-full">
+            <div class="flex items-center justify-between mb-4 p-2">
+              <h1 class="text-xl font-bold text-neutral-700">Add a new Player +</h1>
+              <img src="./Assets/plus-512.webp" onclick="onCloseCreatePlayer()" class=" rotate-45 w-8 cursor-pointer">
+            </div>
+            <form id="playerForm">
+              <div class="mb-4">
+                <label class="block font-medium mb-2">Nom complet</label>
+                <input
+                  type="text"
+                  name="name"
+                  class="w-full border rounded px-3 py-2 focus:outline-none"
+                  placeholder="Nom du joueur"
+          
+                />
+                <small class="text-red-500 hidden"></small>
+              </div>
+              <div class="mb-4">
+                <label class="block font-medium mb-2">Photo URL</label>
+                <input
+                  type="url"
+                  name="photo"
+                  class="w-full border rounded px-3 py-2 focus:outline-none"
+                  placeholder="Photo URL"
+                />
+                <small class="text-red-500 hidden"></small>
+              </div>
+              <div class="mb-4">
+                <label class="block font-medium mb-2">Drapeau d'equipe</label>
+                <input
+                  type="url"
+                  name="flag"
+                  class="w-full border rounded px-3 py-2 focus:outline-none"
+                  placeholder="URL du Drepeau"
+                />
+                <small class="text-red-500 hidden"></small>
+              </div>
+              <div class="mb-4">
+                <label class="block font-medium mb-2">Club Logo</label>
+                <input
+                  type="url"
+                  name="logo"
+                  class="w-full border rounded px-3 py-2 focus:outline-none"
+                  placeholder="Logo URL"
+                />
+                <small class="text-red-500 hidden"></small>
+              </div>
+              <div class="mb-4">
+                  <label class="block font-medium mb-2">Rating</label>
+                  <input
+                    type="number"
+                    name="rating"
+                    class="w-full border rounded px-3 py-2"
+                    placeholder="rating ..."
+                  />
+                <small class="text-red-500 hidden"></small>
+              </div>
+              <div class="mb-4">
+                <label class="block font-medium mb-2">Position</label>
+                <select
+                  name="position"
+                  id="positionSelect"
+                  class="w-full border rounded px-3 py-2"
+                >
+                  <option value="" selected>Veuillez selectionner la position</option>
+                  <option value="GK">Goalkeeper (GK)</option>
+                  <option value="CM">Central Midfielder (CM)</option>
+                  <option value="ST">Striker (ST)</option>
+                  <option value="CB">Center back (CB)</option>
+                  <option value="LB">Left back (LB)</option>
+                  <option value="RB">Right back (RB)</option>
+                  <option value="LW">Left wing (LW)</option>
+                  <option value="RW">Right wing (RW)</option>
+                </select>
+                <small class="text-red-500 hidden"></small>
+              </div>
+              <div id="dynamicFields" class="grid lg:grid-cols-2 mt-3 gap-5"></div>
+              <button
+                type="submit"
+                class="w-full bg-zinc-950 text-white py-2 rounded mt-4"
+              >
+                Add player
+              </button>
+            </form>
+            
+          </div>
+        </div>
