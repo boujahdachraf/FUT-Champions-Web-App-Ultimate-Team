@@ -578,3 +578,40 @@ const deletePlayer = (target) => {
   currentSquad = currentSquad.filter(
     (pl) => pl.name.split(" ")[0] !== playerName
   );
+
+  const newDiv = document.createElement("div");
+  newDiv.innerHTML = `
+          <div
+              id="${target.id}"
+              class="placeholder_player w-16 sm:w-24 md:w-30 lg:w-32 aspect-[1/1.4] relative hover:scale-105 cursor-pointer transition-transform"
+            >
+              <img
+                src="./Assets/badge_total_rush.webp"
+                alt="Player badge"
+                class="absolute w-full h-full z-10"
+              />
+
+              <div
+                class="relative z-20 w-[20%] aspect-square rounded-full bg-white flex items-center justify-center top-[40%] left-[35%]"
+              >
+                <img src="./Assets/plus-512.webp" alt="" />
+              </div>
+            </div>
+    `;
+
+    const placeholderCard = newDiv.firstElementChild;
+  target.replaceWith(placeholderCard);
+  checkPlaceholders();
+};
+
+const editPlayer = (player) => {
+  exists = player.name.split(" ")[0];
+  const targetPosition = document.querySelector(`[data-name='${exists}']`);
+  modal_title.textContent = "Quick Sub";
+
+  currentSquad = currentSquad.filter((pl) => pl.name !== player.name);
+  openListPlayers();
+  filteredPlayers = players.filter(
+    (pl) =>
+      pl.position === targetPosition.id && pl.name.split(" ")[0] !== exists
+  );
