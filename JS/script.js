@@ -473,4 +473,90 @@ const seeDetails = (playerName) => {
 
   modal_title.textContent = "Player Details";
 
+  const detailsPlayer = players.filter(
+    (pl) => pl.name.split(" ")[0] === playerName.split(" ")[0]
+  );
+
+  let badge = "badge_gold.webp";
+
+  const cardDetails = `
+    <div class="cursor-pointer bg-slate-800 rounded-lg p-4">
+        <div class="flex justify-between items-center pe-5 mb-2">
+            <img src="./Assets/plus-512.webp" class="rotate-45 w-6" onclick="closeDetails()" >
+        </div>
+        <div class="flex items-center">
+            <img src=${detailsPlayer[0].photo} alt="" class="me-4 w-24 lg:w-32 rounded-lg" />
+            <div class="flex-grow">
+                <div class="flex justify-between items-center pe-5 mb-2">
+                    <h3 class="font-bold text-xl text-white">${detailsPlayer[0].name}</h3>
+                    <div class="flex gap-x-2">
+                        ${detailsPlayer[0].flag ? `<img src=${detailsPlayer[0].flag} class="w-7 rounded-full" >` : ""}
+                        ${detailsPlayer[0].logo ? `<img src=${detailsPlayer[0].logo} class="w-7 rounded-full" >` : ""}
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <span class="font-bold text-slate-300">${detailsPlayer[0].position}</span>
+                </div>
+                <div class="grid grid-cols-3 gap-2 text-[70%] lg:text-[100%]">
+                ${
+                  detailsPlayer[0].pace
+                      ? `<p class="bg-amber-900/20 p-1 rounded text-center font-bold text-amber-900">PAC: <span class="text-white">${detailsPlayer[0].pace}</span></p>`
+                      : ""
+              }
+              ${
+                detailsPlayer[0].shooting
+                    ? `<p class="bg-amber-900/20 p-1 rounded text-center font-bold text-amber-900">SHO: <span class="text-white">${detailsPlayer[0].shooting}</span></p>`
+                    : ""
+            }
+            ${
+              detailsPlayer[0].passing
+                  ? `<p class="bg-amber-900/20 p-1 rounded text-center font-bold text-amber-900">PAS: <span class="text-white">${detailsPlayer[0].passing}</span></p>`
+                  : ""
+          }
+          ${
+              detailsPlayer[0].dribbling
+                  ? `<p class="bg-amber-900/20 p-1 rounded text-center font-bold text-amber-900">DRB: <span class="text-white">${detailsPlayer[0].dribbling}</span></p>`
+                  : ""
+          }
+          ${
+              detailsPlayer[0].defending
+                  ? `<p class="bg-amber-900/20 p-1 rounded text-center font-bold text-amber-900">DEF: <span class="text-white">${detailsPlayer[0].defending}</span></p>`
+                  : ""
+          }
+          ${
+              detailsPlayer[0].physical
+                  ? `<p class="bg-amber-900/20 p-1 rounded text-center font-bold text-amber-900">PHY: <span class="text-white">${detailsPlayer[0].physical}</span></p>`
+                  : ""
+          }
+          ${
+              detailsPlayer[0].diving
+                  ? `<p class="bg-amber-900/20 p-1 rounded text-center font-bold text-amber-900">DIV: <span class="text-white">${detailsPlayer[0].diving}</span></p>`
+                  : ""
+          }
+          ${
+              detailsPlayer[0].handling
+                  ? `<p class="bg-amber-900/20 p-1 rounded text-center font-bold text-amber-900">HDL: <span class="text-white">${detailsPlayer[0].handling}</span></p>`
+                  : ""
+          }
+          ${
+              detailsPlayer[0].kicking
+                  ? `<p class="bg-amber-900/20 p-1 rounded text-center font-bold text-amber-900">KICK: <span class="text-white">${detailsPlayer[0].kicking}</span></p>`
+                  : ""
+          }
+          ${
+              detailsPlayer[0].reflexes
+                  ? `<p class="bg-amber-900/20 p-1 rounded text-center font-bold text-amber-900">RFL: <span class="text-white">${detailsPlayer[0].reflexes}</span></p>`
+                  : ""
+          }
+          ${
+              detailsPlayer[0].speed
+                  ? `<p class="bg-amber-900/20 p-1 rounded text-center font-bold text-amber-900">SPD: <span class="text-white">${detailsPlayer[0].speed}</span></p>`
+                  : ""
+          }
+          ${
+              detailsPlayer[0].positioning
+                  ? `<p class="bg-amber-900/20 p-1 rounded text-center font-bold text-amber-900">POS: <span class="text-white">${detailsPlayer[0].positioning}</span></p>`
+                  : ""
+          }
+
   
