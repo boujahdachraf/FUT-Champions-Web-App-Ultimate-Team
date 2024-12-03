@@ -430,7 +430,6 @@ let playerList = document.querySelector(".players_list");
 let modal_title = document.getElementById("modal_title");
 
 let playerForm = document.getElementById("playerForm");
-
 let createPlayerPopUp = document.getElementById("createPopUp");
 
   
