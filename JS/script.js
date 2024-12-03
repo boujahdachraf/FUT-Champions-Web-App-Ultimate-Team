@@ -568,4 +568,13 @@ const seeDetails = (playerName) => {
   renderListPlayers();
 };
 
-  
+const closeDetails = () => {
+  player_details.toggleAttribute("open", false);
+};
+
+const deletePlayer = (target) => {
+  const playerName = target.getAttribute("data-name");
+
+  currentSquad = currentSquad.filter(
+    (pl) => pl.name.split(" ")[0] !== playerName
+  );
