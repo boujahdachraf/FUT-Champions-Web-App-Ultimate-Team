@@ -650,3 +650,26 @@ const createPlayerCard = (player) => {
             </div>
         </div>
     `;
+
+    const actionMenu = card.querySelector(".absolute.hidden");
+  const seeDet = document.createElement("img");
+  seeDet.src = "./Assets/stats.png";
+  seeDet.className = "w-4";
+  seeDet.onclick = () => seeDetails(player.name);
+
+  const editpl = document.createElement("img");
+  editpl.src = "./Assets/edit.png";
+  editpl.className = "w-4";
+  editpl.onclick = () => editPlayer(player, card);
+
+  const deletPl = document.createElement("img");
+  deletPl.src = "./Assets/delete-button.png";
+  deletPl.className = "w-4";
+  deletPl.onclick = () => deletePlayer(card);
+
+  actionMenu.appendChild(seeDet);
+  actionMenu.appendChild(editpl);
+  actionMenu.appendChild(deletPl);
+
+  return card;
+};
