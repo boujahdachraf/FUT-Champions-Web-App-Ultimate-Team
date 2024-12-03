@@ -693,3 +693,100 @@ const appendPlayer = (player, targetElement) => {
   exists = null;
   closeListPlayers();
 };
+
+const renderListPlayers = (targetPosition) => {
+  playerList.innerHTML = "";
+
+  filteredPlayers.forEach((player) => {
+    const playerCard = document.createElement("div");
+    playerCard.className = `flex py-3 ${
+      targetPosition && "cursor-pointer"
+    } bg-slate-300 rounded-lg shadow-md`;
+    
+
+   playerCard.innerHTML = `
+    <div class="flex items-center bg-slate-300 rounded-lg p-4">
+        <img src=${player.photo} alt="" class="me-4 w-24 lg:w-32 rounded-lg" />
+        <div class="flex-grow">
+            <div class="flex justify-between items-center pe-5 mb-2">
+                <h3 class="font-bold text-xl text-black">${player.name}</h3>
+                <div class="flex gap-x-2">
+                    ${player.flag ? `<img src=${player.flag} class="w-7 rounded-full" >` : ""}
+                    ${player.logo ? `<img src=${player.logo} class="w-7 rounded-full" >` : ""}
+                </div>
+            </div>
+            <div class="mb-2">
+                <span class="font-bold text-black">${player.position}</span>
+            </div>
+            <div class="grid grid-cols-3 gap-2 text-[70%] lg:text-[100%]">
+                ${
+                    player.pace
+                        ? `<p class="bg-amber-900/20 p-1 rounded text-center font-bold text-amber-900">PAC: <span class="text-white">${player.pace}</span></p>`
+                        : ""
+                }
+                ${
+                    player.shooting
+                        ? `<p class="bg-amber-900/20 p-1 rounded text-center font-bold text-amber-900">SHO: <span class="text-white">${player.shooting}</span></p>`
+                        : ""
+                }
+                ${
+                    player.passing
+                        ? `<p class="bg-amber-900/20 p-1 rounded text-center font-bold text-amber-900">PAS: <span class="text-white">${player.passing}</span></p>`
+                        : ""
+                }
+                ${
+                    player.dribbling
+                        ? `<p class="bg-amber-900/20 p-1 rounded text-center font-bold text-amber-900">DRB: <span class="text-white">${player.dribbling}</span></p>`
+                        : ""
+                }
+                ${
+                    player.defending
+                        ? `<p class="bg-amber-900/20 p-1 rounded text-center font-bold text-amber-900">DEF: <span class="text-white">${player.defending}</span></p>`
+                        : ""
+                }
+                ${
+                    player.physical
+                        ? `<p class="bg-amber-900/20 p-1 rounded text-center font-bold text-amber-900">PHY: <span class="text-white">${player.physical}</span></p>`
+                        : ""
+                }
+                ${
+                    player.diving
+                        ? `<p class="bg-amber-900/20 p-1 rounded text-center font-bold text-amber-900">DIV: <span class="text-white">${player.diving}</span></p>`
+                        : ""
+                }
+                ${
+                    player.handling
+                        ? `<p class="bg-amber-900/20 p-1 rounded text-center font-bold text-amber-900">HDL: <span class="text-white">${player.handling}</span></p>`
+                        : ""
+                }
+                ${
+                    player.kicking
+                        ? `<p class="bg-amber-900/20 p-1 rounded text-center font-bold text-amber-900">KICK: <span class="text-white">${player.kicking}</span></p>`
+                        : ""
+                }
+                ${
+                    player.reflexes
+                        ? `<p class="bg-amber-900/20 p-1 rounded text-center font-bold text-amber-900">RFL: <span class="text-white">${player.reflexes}</span></p>`
+                        : ""
+                }
+                ${
+                    player.speed
+                        ? `<p class="bg-amber-900/20 p-1 rounded text-center font-bold text-amber-900">SPD: <span class="text-white">${player.speed}</span></p>`
+                        : ""
+                }
+                ${
+                    player.positioning
+                        ? `<p class="bg-amber-900/20 p-1 rounded text-center font-bold text-amber-900">POS: <span class="text-white">${player.positioning}</span></p>`
+                        : ""
+                }
+            </div>
+            <div class="w-full flex justify-end px-3 mt-3">
+                ${
+                    exists
+                        ? `<img src="./Assets/Icons/modify-icon.webp" class="w-7" >`
+                        : ""
+                }
+            </div>
+        </div>
+    </div>
+`;
