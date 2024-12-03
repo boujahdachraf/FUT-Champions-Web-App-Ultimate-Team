@@ -673,3 +673,23 @@ const createPlayerCard = (player) => {
 
   return card;
 };
+
+const appendPlayer = (player, targetElement) => {
+  openListPlayers();
+  if (!targetElement) {
+    console.error("Invalid target element.");
+    return;
+  }
+
+  if (exists && typeof exists === "string") {
+    currentSquad = players.filter((pl) => pl.name.split(" ")[0] !== exists);
+  }
+
+  const newCard = createPlayerCard(player);
+  currentSquad.push(player);
+
+  targetElement.replaceWith(newCard);
+
+  exists = null;
+  closeListPlayers();
+};
