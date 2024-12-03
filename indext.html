@@ -1,92 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Youcode FUT Team</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css"/>
-  <script src="https://cdn.tailwindcss.com"></script>
-
-</head>
-<body>
-  <nav class="bg-gray-800 shadow-md p-4">
-    <div class="container mx-auto flex justify-between items-center">
-      <!-- Logo FUT -->
-      <div class="flex items-center">
-        <img src="../Assest/youcode.png" alt="Logo" class="h-8">
-        <span class="text-2xl font-bold text-orange-500 ml-2">FUT</span>
-      </div>    
-
-      <!-- Formation -->
-      <div class="flex items-center space-x-2">
-        <select class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none">
-          <option>4-3-3</option>
-          <option>4-4-2</option>
-          <option>Other</option>
-        </select>
-        <button class="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
-            Add Player
-          </button>
-      </div>
-
-      <!-- Authentication Links -->
-      <div class="flex space-x-4">
-        <a href="#" class="text-blue-500 hover:text-blue-700">Login</a>
-        <a href="#" class="text-blue-500 hover:text-blue-700">Create Account</a>
-      </div>
-    </div>
-</nav>
- <!-- Cards  -->
-<div class="background-stadium flex flex-col md:flex-row justify-evenly bg-[#1C1914]">
-        <div>
-        <img class=" relative w-[800px] h-full" src="../Assest/stadium_background.webp" alt="background">
-
-        <div class="matchContainer">
-            <div class="attaquant absolute top-0  translate-y-[79px] translate-x-[180px] flex gap-14 justify-center	 ">
-
-                <img class="cards w-28" src="../Assest/badge_total_rush.webp" alt="">
-                <img class="cards w-28" src="../Assest/badge_total_rush.webp" alt="">
-                <img class="cards w-28" src="../Assest/badge_total_rush.webp" alt="">
-            </div>
-            <div class="milieu  absolute top-0  translate-y-[242px] translate-x-[180px] flex gap-14  justify-center	">
-                <img class="cards w-28" src="../Assest/badge_total_rush.webp" alt="">
-                <img class="cards w-28" src="../Assest/badge_total_rush.webp" alt="">
-                <img class="cards w-28" src="../Assest/badge_total_rush.webp" alt="">
-
-            </div>
-            <div class="defenseurs  absolute top-0  translate-y-[400px] translate-x-[100px] gap-14 flex justify-center	">
-                <img class="cards w-28" src="../Assest/badge_total_rush.webp" alt="">
-                <img class="cards w-28" src="../Assest/badge_total_rush.webp" alt="">
-                <img class="cards w-28" src="../Assest/badge_total_rush.webp" alt="">
-                <img class="cards w-28" src="../Assest/badge_total_rush.webp" alt="">
-            </div>
-            <div class="gardien absolute top-0 translate-y-[549px] translate-x-[345px] flex justify-center  ">
-                <img class="cards w-28" src="../Assest/badge_total_rush.webp" alt="">
-            </div>
-        </div>
-        
-        
-        </div>
-        
-        <div class="subscards ">
-        <img class="w-[200px]" src="../Assest/subsdesign.jpg" alt="subs">
-        <div class="subsontainer absolute flex flex-col justify-end ">
-            <div class="flex">
-                <img class="cardchange w-28" src="../Assest/badge_total_rush.webp" alt="">
-                <img class="cardchange w-28" src="../Assest/badge_total_rush.webp" alt="">
-            </div>
-            <div class="flex">
-                <img class="cardchange w-28" src="../Assest/badge_total_rush.webp" alt="">
-                <img class="cardchange w-28" src="../Assest/badge_total_rush.webp" alt="">
-            </div>
-            <div class="flex">
-                <img class="cardchange w-28" src="../Assest/badge_total_rush.webp" alt="">
-                <img class="cardchange w-28" src="../Assest/badge_total_rush.webp" alt="">
-            </div>
-</div>
-        </div>
-    </div>
-        
-</body>
-</html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FUT-Champs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .player-badge {
+      position: absolute;
+      width: 6.25em;
+      height: auto;
+    }
+  </style>
+  </head>
+  <body class="bg-black">
+    <button onclick="onOpenCreatePlayer()" class="text-black bg-[#28DED6] hover:bg-orange-400 mt-3 flex items-center gap-x-2 ms-auto px-3 py-2 rounded-md me-4">
+        Add Player +
+    </button>
