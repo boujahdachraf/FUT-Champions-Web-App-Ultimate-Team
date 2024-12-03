@@ -615,3 +615,10 @@ const editPlayer = (player) => {
     (pl) =>
       pl.position === targetPosition.id && pl.name.split(" ")[0] !== exists
   );
+  if (targetPosition) {
+    renderListPlayers(targetPosition);
+  } else {
+    console.error("Target position not found for editing.");
+  }
+  exists = null;
+};
