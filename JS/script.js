@@ -418,3 +418,7 @@ let players = [
       positioning: 85,
     },
   ];
+
+  let currentSquad = [];
+
+  let filteredPlayers = players;
