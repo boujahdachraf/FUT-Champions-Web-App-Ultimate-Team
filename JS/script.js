@@ -558,5 +558,14 @@ const seeDetails = (playerName) => {
                   ? `<p class="bg-amber-900/20 p-1 rounded text-center font-bold text-amber-900">POS: <span class="text-white">${detailsPlayer[0].positioning}</span></p>`
                   : ""
           }
+          </div>
+            </div>
+        </div>
+    </div>
+`;
+  player_details.innerHTML = cardDetails;
+
+  renderListPlayers();
+};
 
   
