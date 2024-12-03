@@ -622,3 +622,31 @@ const editPlayer = (player) => {
   }
   exists = null;
 };
+
+const createPlayerCard = (player) => {
+
+  const card = document.createElement("div");
+  card.dataset.name = player.name.split(" ")[0];
+  card.id = player.position;
+  card.className =
+    "w-16 sm:w-24 md:w-30 group lg:w-32 xl:w-36 aspect-[1/1.4] relative z-20 cursor-pointer hover:scale-110 transition-transform currentSquads";
+
+  card.innerHTML = `
+        <div class="absolute hidden z-30 group-hover:flex w-[110%] lg:w-[100%] items-center justify-between p-2 shadow-lg left-0 -top-[20%] lg:-top-[3%] bg-white rounded-lg">
+        </div>
+        <img src="./Assets/badge_total_rush.webp" alt="Player badge" class="absolute w-full h-full z-10"/>
+        <div class="relative z-20 w-full h-full">
+            <img src="${player.photo}" alt="Player Photo" class="absolute w-[60%] top-[20%] right-[20%]"/>
+            <div class="absolute top-[27%] left-[16%] text-center text-white">
+                <p class="text-[40%] lg:text-[90%] font-bold">${player.rating}</p>
+                <p class="text-[27%] lg:text-[78%] font-bold">${player.position}</p>
+            </div>
+            <div class="absolute top-[65%] w-full text-center text-white">
+                <p class="text-[50%] max-w-[70%] mx-auto w-full truncate lg:text-[80%] font-semibold">${player.name}</p>
+                <div class="flex items-center justify-center gap-x-2"> 
+                    <img src="${player.logo}" class="w-[10%] h-[10%]">
+                    <img src="${player.flag}" class="w-[10%] h-[10%]">
+                </div>
+            </div>
+        </div>
+    `;
