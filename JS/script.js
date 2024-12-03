@@ -449,4 +449,28 @@ const onCloseCreatePlayer = () => {
   createPlayerPopUp.toggleAttribute("open", false);
 };
 
+const checkPlaceholders = () => {
+  document.querySelectorAll(".placeholder_player").forEach((ele) => {
+    ele.onclick = () => {
+      const targetPosition = ele;
+      modal_title.textContent = "Remplacement";
+      filteredPlayers = players.filter(
+        (player) =>
+          player.position === targetPosition.id &&
+          !currentSquad.some((active) => active.name === player.name)
+      );
+      openListPlayers();
+      renderListPlayers(targetPosition);
+    };
+  });
+};
+
+checkPlaceholders();
+
+const seeDetails = (playerName) => {
+  let player_details = document.getElementById("player_details");
+  player_details.toggleAttribute("open");
+
+  modal_title.textContent = "Player Details";
+
   
