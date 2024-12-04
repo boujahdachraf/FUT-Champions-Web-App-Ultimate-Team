@@ -3,13 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FUT-Champs</title>
+    <title>YoucodeFUT-Champs</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       .player-badge {
       position: absolute;
       width: 6.25em;
       height: auto;
+    }
+    .hidden{
+      display: none;
     }
   </style>
   </head>
@@ -224,23 +227,8 @@
       </div>
     </main>
 
-    <div
-      id="players_list"
-      class="fixed bg-slate-800 w-full h-full max-h-screen flex flex-col md:[75%] xl:w-[50%] shadow-lg z-50 open:top-0 -top-full transition-all duration-300 p-5 left-1/2 -translate-x-1/2"
->
-      <div class="flex justify-between">
-        <h1 id="modal_title" class="text-xl font-bold text-orange-500">Remplacement</h1>
-        <img
-          src="./Assets/plus-512.webp"
-          alt=""
-          class="w-7 ms-auto rotate-45 cursor-pointer"
-          onclick="closeListPlayers()"/>
-      </div>
-      <div
-        class="players_list flex flex-col gap-y-3 mt-10 flex-grow h-full overflow-y-scroll"></div>
-
         <!-- Add Player form pop up -->
-        <div id="createPopUp" class="fixed inset-0 min-h-screen h-full w-full overflow-y-auto backdrop-blur-md z-50 hidden open:flex items-center justify-center p-4">
+        <div id="createPopUp" class="fixed z-50 inset-0 min-h-screen h-full w-full overflow-y-auto backdrop-blur-md  hidden open:flex  items-center justify-center p-4">
           <div class="bg-slate-200 max-w-2xl max-h-full overflow-y-scroll shadow-lg rounded-lg px-4 py-6 lg:p-5 w-full">
             <div class="flex items-center justify-between mb-4 p-2">
               <h1 class="text-xl font-bold text-neutral-700">Add a new Player +</h1>
@@ -328,6 +316,21 @@
             
           </div>
         </div>
+    <div
+      id="players_list"
+      class="fixed bg-slate-800 w-full h-full max-h-screen flex flex-col md:[75%] xl:w-[50%] shadow-lg z-50 open:top-0 -top-full transition-all duration-300 p-5 left-1/2 -translate-x-1/2"
+>
+      <div class="flex justify-between">
+        <h1 id="modal_title" class="text-xl font-bold text-orange-500">Remplacement</h1>
+        <img
+          src="./Assets/plus-512.webp"
+          alt=""
+          class="w-7 ms-auto rotate-45 cursor-pointer"
+          onclick="closeListPlayers()"/>
+      </div>
+      <div
+        class="players_list flex flex-col gap-y-3 mt-10 flex-grow h-full overflow-y-scroll"></div>
+
 
         <div id="player_details" class="fixed hidden open:flex h-screen items-center justify-center w-full inset-0 z-50 backdrop-blur-md">
         </div>
