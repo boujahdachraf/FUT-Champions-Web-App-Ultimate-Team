@@ -819,3 +819,157 @@ const positionAttributes = {
     { name: "physical", label: "Physical", type: "number" },
   ],
 };
+
+document.getElementById("positionSelect").addEventListener("change", (e) => {
+  let dynamicFields = document.getElementById("dynamicFields");
+
+  dynamicFields.innerHTML = "";
+
+  let position = e.target.value === "GK" ? "GK" : "CM";
+  
+  positionAttributes[position].forEach((attr) => {
+    const field = document.createElement("div");
+    field.className = "mb-3";
+    field.innerHTML = `
+        <div class="mb-2 block">
+        <label class="font-medium">${attr.label}</label>
+        <input
+          type="${attr.type}"
+          name="${attr.name}"
+          data-ref = "player_statistic"
+          class="w-full border rounded px-3 py-2"
+          placeholder="${attr.label}"
+        />
+        <small class="text-red-500 hidden">
+
+        </small>
+        </div>
+      `;
+    dynamicFields.appendChild(field);
+  });
+});
+
+document.getElementById("playerForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const playerForm = document.getElementById("playerForm");
+  let formData = new FormData(playerForm);
+  let playerData = Object.fromEntries(formData.entries());
+
+  const nameInput = e.target["name"];
+  const photoInput = e.target["photo"];
+  const flagInput = e.target["flag"];
+  const logoInput = e.target["logo"];
+  const ratingInput = e.target["rating"];
+  const nameError = nameInput.nextElementSibling;
+  const photoError = photoInput.nextElementSibling;
+  const flagError = flagInput.nextElementSibling;
+  const logoError = logoInput.nextElementSibling;
+  const ratingError = ratingInput.nextElementSibling;
+
+  console.log(flagInput.value);
+  console.log(logoInput.value);
+  console.log(ratingInput.value);
+
+  let isValid = true;
+
+  const urlRegex =
+    /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([\/\w .-]*)*\/?$/;
+
+
+  if (
+    nameInput.value.trim().length < 4 ||
+    /[^a-zA-Z\s]/.test(nameInput.value.trim())
+  ) {
+    nameError.textContent = "Valeur tres court pour etre un nom.";
+    nameError.classList.remove("hidden");
+    isValid = false;
+  } else {
+    nameError.textContent = "";
+    nameError.classList.add("hidden");
+  }
+
+
+  if (photoInput.value.length < 2 && !urlRegex.test(photoInput.value.trim())) {
+    photoError.textContent = "Veuillez fournir une URL valide.";
+    photoError.classList.remove("hidden");
+    isValid = false;
+  } else {
+    photoError.textContent = "";
+    photoError.classList.add("hidden");
+  }
+
+  
+
+  if (logoInput.value.length < 2 && !urlRegex.test(logoInput.value.trim())) {
+    logoError.textContent = "Veuillez fournir une URL valide.";
+    logoError.classList.remove("hidden");
+    isValid = false;
+  } else {
+    logoError.textContent = "";
+    logoError.classList.add("hidden");
+  }
+
+
+  if (flagInput.value.length < 2 && !urlRegex.test(flagInput.value.trim())) {
+    flagError.textContent = "Veuillez fournier une URL valide.";
+    flagError.classList.remove("hidden");
+    isValid = false;
+  } else {
+    flagError.textContent = "";
+    flagError.classList.add("hidden");
+  }
+
+  
+  if (
+    !ratingInput.value.trim() ||
+    isNaN(ratingInput.value) ||
+    ratingInput.value < 1 ||
+    ratingInput.value > 100
+  ) {
+    ratingError.textContent = "le Rating doit etre entre 1 et 100.";
+    ratingError.classList.remove("hidden");
+    isValid = false;
+  } else {
+    ratingError.textContent = "";
+    ratingError.classList.add("hidden");
+  }
+
+  let statisctics = document.querySelectorAll(
+    "input[data-ref='player_statistic']"
+  );
+  statisctics.forEach((ele) => {
+    if (ele.value < 1) {
+      ele.nextElementSibling.classList.remove("hidden");
+      ele.nextElementSibling.textContent = "Veuillez fournir une valeur entre 0 et 100";
+      isValid = false;
+      return;
+    } else if (ele.value > 100) {
+      ele.nextElementSibling.classList.remove("hidden");
+      ele.nextElementSibling.textContent = "Veuillez fournir une valeur entre 1 et 100";
+      isValid = false;
+    } else {
+      ele.nextElementSibling.classList.add("hidden");
+    }
+  });
+
+  if (!isValid) {
+    return;
+  }
+  document.querySelectorAll("small").forEach((ele) => {
+    ele.classList.add("hidden");
+  });
+  document.querySelectorAll("#playerForm input").forEach((ele) => {
+    ele.value = "";
+  });
+
+  players.push(playerData);
+
+  e.target["name"].value = "";
+  e.target["photo"].value = "";
+  e.target["flag"].value = "";
+  e.target["logo"].value = "";
+  e.target["rating"].value = "";
+  e.target["position"].value = "";
+
+  onCloseCreatePlayer();
+});
