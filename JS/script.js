@@ -800,3 +800,22 @@ if (targetPosition) {
 playerList.appendChild(playerCard);
 });
 };
+
+const positionAttributes = {
+  GK: [
+    { name: "diving", label: "Diving", type: "number" },
+    { name: "handling", label: "Handling", type: "number" },
+    { name: "kicking", label: "Kicking", type: "number" },
+    { name: "reflexes", label: "Reflexes", type: "number" },
+    { name: "speed", label: "Speed", type: "number" },
+    { name: "positioning", label: "Positioning", type: "number" },
+  ],
+  CM: [
+    { name: "pace", label: "Pace", type: "number" },
+    { name: "shooting", label: "Shooting", type: "number" },
+    { name: "passing", label: "Passing", type: "number" },
+    { name: "dribbling", label: "Dribbling", type: "number" },
+    { name: "defending", label: "Defending", type: "number" },
+    { name: "physical", label: "Physical", type: "number" },
+  ],
+};
