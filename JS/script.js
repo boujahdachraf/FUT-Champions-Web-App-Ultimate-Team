@@ -482,7 +482,7 @@ const seeDetails = (playerName) => {
   const cardDetails = `
     <div class="cursor-pointer bg-slate-800 rounded-lg p-4">
         <div class="flex justify-between items-center pe-5 mb-2">
-            <img src="./Assets/plus-512.webp" class="rotate-45 w-6" onclick="closeDetails()" >
+            <img src="./Assest/plus-512.webp" class="rotate-45 w-6" onclick="closeDetails()" >
         </div>
         <div class="flex items-center">
             <img src=${detailsPlayer[0].photo} alt="" class="me-4 w-24 lg:w-32 rounded-lg" />
@@ -634,7 +634,7 @@ const createPlayerCard = (player) => {
   card.innerHTML = `
         <div class="absolute hidden z-30 group-hover:flex w-[110%] lg:w-[100%] items-center justify-between p-2 shadow-lg left-0 -top-[20%] lg:-top-[3%] bg-white rounded-lg">
         </div>
-        <img src="./Assets/badge_total_rush.webp" alt="Player badge" class="absolute w-full h-full z-10"/>
+        <img src="./Assest/badge_total_rush.webp" alt="Player badge" class="absolute w-full h-full z-10"/>
         <div class="relative z-20 w-full h-full">
             <img src="${player.photo}" alt="Player Photo" class="absolute w-[60%] top-[20%] right-[20%]"/>
             <div class="absolute top-[27%] left-[16%] text-center text-white">
@@ -783,7 +783,7 @@ const renderListPlayers = (targetPosition) => {
             <div class="w-full flex justify-end px-3 mt-3">
                 ${
                     exists
-                        ? `<img src="./Assets/Icons/modify-icon.webp" class="w-7" >`
+                        ? `<img src="./Assest/edit.png" class="w-7" >`
                         : ""
                 }
             </div>
