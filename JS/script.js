@@ -790,3 +790,13 @@ const renderListPlayers = (targetPosition) => {
         </div>
     </div>
 `;
+
+if (targetPosition) {
+  playerCard.onclick = () => {
+    appendPlayer(player, targetPosition);
+  };
+}
+
+playerList.appendChild(playerCard);
+});
+};
