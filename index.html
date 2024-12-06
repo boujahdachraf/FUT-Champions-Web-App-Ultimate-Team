@@ -17,7 +17,7 @@
   </style>
   </head>
   <body class="bg-black">
-    <button onclick="onOpenCreatePlayer()" class="text-black bg-[#28DED6] hover:bg-orange-400 mt-3 flex items-center gap-x-2 ms-auto px-3 py-2 rounded-md me-4">
+    <button onclick="onOpenCreatePlayer()" class="text-black bg-[#28DED6] hover:bg-orange-400 mt-3 flex items-center gap-x-2 ms-auto px-3 py-2 rounded-md me-[650px]">
         Add Player +
     </button>
 
@@ -32,7 +32,7 @@
           >
             <div
               id="LW"
-              class="placeholder_player w-16 sm:w-24 md:w-30 lg:w-32 aspect-[1/1.4] relative hover:scale-105 cursor-pointer transition-transform"
+              class="placeholder_player w-16 sm:w-24 md:w-30 lg:w-32 aspect-[1/1.4] relative cursor-pointer transition-transform"
             >
               <img
                 src="./Assets/badge_total_rush.webp"
@@ -48,7 +48,7 @@
             </div>
             <div
               id="ST"
-              class="placeholder_player w-16 sm:w-24 md:w-30 lg:w-32 aspect-[1/1.4] z-20 relative hover:scale-105 cursor-pointer transition-transform"
+              class="placeholder_player w-16 sm:w-24 md:w-30 lg:w-32 aspect-[1/1.4] z-20 relative cursor-pointer transition-transform"
             >
               <img
                 src="./Assets/badge_total_rush.webp"
@@ -64,7 +64,7 @@
             </div>
             <div
               id="RW"
-              class="placeholder_player w-16 sm:w-24 md:w-30 lg:w-32 aspect-[1/1.4] relative hover:scale-105 cursor-pointer transition-transform"
+              class="placeholder_player w-16 sm:w-24 md:w-30 lg:w-32 aspect-[1/1.4] relative cursor-pointer transition-transform"
             >
               <img
                 src="./Assets/badge_total_rush.webp"
@@ -85,7 +85,7 @@
           >
             <div
               id="CM"
-              class="placeholder_player w-16 sm:w-24 md:w-30 lg:w-32 aspect-[1/1.4] relative hover:scale-105 cursor-pointer transition-transform"
+              class="placeholder_player w-16 sm:w-24 md:w-30 lg:w-32 aspect-[1/1.4] relative cursor-pointer transition-transform"
             >
               <img
                 src="./Assets/badge_total_rush.webp"
@@ -101,7 +101,7 @@
             </div>
             <div
               id="CM"
-              class="placeholder_player w-16 sm:w-24 md:w-30 lg:w-32 aspect-[1/1.4] z-20 relative hover:scale-105 cursor-pointer transition-transform"
+              class="placeholder_player w-16 sm:w-24 md:w-30 lg:w-32 aspect-[1/1.4] z-20 relative cursor-pointer transition-transform"
             >
               <img
                 src="./Assets/badge_total_rush.webp"
@@ -117,7 +117,7 @@
             </div>
             <div
               id="CM"
-              class="placeholder_player w-16 sm:w-24 md:w-30 lg:w-32 aspect-[1/1.4] relative hover:scale-105 cursor-pointer transition-transform"
+              class="placeholder_player w-16 sm:w-24 md:w-30 lg:w-32 aspect-[1/1.4] relative cursor-pointer transition-transform"
             >
               <img
                 src="./Assets/badge_total_rush.webp"
@@ -138,7 +138,7 @@
           >
             <div
               id="LB"
-              class="placeholder_player w-16 sm:w-24 md:w-30 lg:w-32 aspect-[1/1.4] relative hover:scale-105 cursor-pointer transition-transform"
+              class="placeholder_player w-16 sm:w-24 md:w-30 lg:w-32 aspect-[1/1.4] relative cursor-pointer transition-transform"
             >
               <img
                 src="./Assets/badge_total_rush.webp"
@@ -154,7 +154,7 @@
             </div>
             <div
               id="CB"
-              class="placeholder_player w-16 sm:w-24 md:w-30 lg:w-32 aspect-[1/1.4] relative hover:scale-105 cursor-pointer transition-transform"
+              class="placeholder_player w-16 sm:w-24 md:w-30 lg:w-32 aspect-[1/1.4] relative cursor-pointer transition-transform"
             >
               <img
                 src="./Assets/badge_total_rush.webp"
@@ -170,7 +170,7 @@
             </div>
             <div
               id="CB"
-              class="placeholder_player w-16 sm:w-24 md:w-30 lg:w-32 aspect-[1/1.4] relative hover:scale-105 cursor-pointer transition-transform"
+              class="placeholder_player w-16 sm:w-24 md:w-30 lg:w-32 aspect-[1/1.4] relative cursor-pointer transition-transform"
             >
               <img
                 src="./Assets/badge_total_rush.webp"
@@ -186,7 +186,7 @@
             </div>
             <div
               id="RB"
-              class="placeholder_player w-16 sm:w-24 md:w-30 lg:w-32 aspect-[1/1.4] relative hover:scale-105 cursor-pointer transition-transform"
+              class="placeholder_player w-16 sm:w-24 md:w-30 lg:w-32 aspect-[1/1.4] relative cursor-pointer transition-transform"
             >
               <img
                 src="./Assets/badge_total_rush.webp"
@@ -207,7 +207,7 @@
           >
           <div
               id="GK"
-              class="placeholder_player w-16 sm:w-24 md:w-30 lg:w-32 aspect-[1/1.4] relative hover:scale-105 cursor-pointer transition-transform"
+              class="placeholder_player w-16 sm:w-24 md:w-30 lg:w-32 aspect-[1/1.4] relative cursor-pointer transition-transform"
             >
               <img
                 src="./Assets/badge_total_rush.webp"
@@ -229,7 +229,7 @@
 
         <!-- Add Player form pop up -->
         <div id="createPopUp" class="fixed z-50 inset-0 min-h-screen h-full w-full overflow-y-auto backdrop-blur-md  hidden open:flex  items-center justify-center p-4">
-          <div class="bg-slate-200 max-w-2xl max-h-full overflow-y-scroll shadow-lg rounded-lg px-4 py-6 lg:p-5 w-full">
+          <div class="bg-emerald-200 max-w-2xl max-h-full overflow-y-scroll shadow-lg rounded-lg px-4 py-6 lg:p-5 w-full">
             <div class="flex items-center justify-between mb-4 p-2">
               <h1 class="text-xl font-bold text-neutral-700">Add a new Player +</h1>
               <img src="./Assets/plus-512.webp" onclick="onCloseCreatePlayer()" class=" rotate-45 w-8 cursor-pointer">
